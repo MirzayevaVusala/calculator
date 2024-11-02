@@ -23,7 +23,8 @@ function clearCalculator() {
 }
 
 function appendNumber(number) {
-    if (currentInput.length < 20) {
+    if (number === '.' && currentInput.includes('.')) return; 
+    if (currentInput.length < 60) {
         currentInput += number;
         updateDisplay();
     }
@@ -65,7 +66,7 @@ function calculate() {
             break;
         default:
             return;
-    }
+               }
 
     currentInput = computation.toString();
     operation = '';
@@ -76,9 +77,12 @@ function calculate() {
 }
 
 
-function addToHistory(prev, op, current, result) {
-    const entry = `${prev} ${op} ${current} = ${result}`;
+function addToHistory(prev, operation, current, result) {
+    const entry = `${prev} ${operation} ${current} = ${result}`;
     history.push(entry);
+    if (history.length > 3) {
+        history.shift(); 
+    }
     updateHistoryDisplay();
 }
 

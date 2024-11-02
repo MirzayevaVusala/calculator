@@ -35,12 +35,12 @@ body {
 }
 
 .calculation-plane {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: flex-end;
-    grid-area: a;
     height: 350px;
-
-
+margin-left: 10px;
+margin-right: 10px;
 }
 
 .line {
@@ -66,9 +66,10 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     overflow-y: hidden;
+    /* text-align: right; */
+    /* grid-area: calc; */
 }
-.operation,
-.input {
+.operation{
     color: white;
     font-family: Roboto;
     font-size: 24px;
@@ -79,6 +80,20 @@ body {
     display: flex;
     white-space: normal; 
     overflow-wrap: break-word; 
+    padding-left: 50px;
+    /* grid-area: op; */
+}
+.input {
+    color: white;
+    font-family: Roboto;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+   text-align: right;
+    max-width: 200px; 
+      white-space: normal; 
+    overflow-wrap: break-word; 
+   
 }
 
 .button {
@@ -86,7 +101,6 @@ body {
     width: 55px;
     height: 55px;
     top: 386px;
-    /* left: 222px; */
     gap: 0px;
     opacity: 0px;
     border: none;
@@ -95,7 +109,6 @@ body {
     font-size: 30px;
     font-weight: 400;
     line-height: 35.16px;
-    /* text-align: left; */
     justify-content: center;
     opacity: 1;
 
@@ -116,7 +129,8 @@ body {
 .history {
     font-size: 14px;
     color: gray;
-    margin-bottom: 130px;
-    margin-left: 230px;
     font-size: 20px;
+     grid-column: 1/4;
+   display: flex;
+justify-content: flex-end;    
 }
